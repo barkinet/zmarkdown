@@ -5,6 +5,7 @@
   <title>ZMarkdown test</title>
   <script src="./ansi_up.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/md.css">
   <style>
     html, body {
       margin: 0;
@@ -73,10 +74,14 @@ $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$
 
-
-> [[secret]]
-> | [spoil](http://example.com)
-> | > respoil
+Quote:
+> Custom block:
+>
+> [[attention]]
+> | Link: [example](http://example.com)
+> | > Re-quote!
+> | It's fun!
+> End of custom block.
 
 **Foo!**
 
@@ -88,7 +93,7 @@ $$
       </div>
     </div>
     <div class="wrapper">
-      <div id="render" class="markdown-body"></div>
+      <div id="render" class="zmarkdown"></div>
       <div class="debug" id="debug-ast">
         <pre><code id="html"></code></pre>
       </div>
@@ -96,6 +101,7 @@ $$
   </section>
   <script src="bundle.js"></script>
   <script type="text/javascript">
+    ZMarkdown = ZMarkdown({ headingShift: 1 })
     var ansiUp = new AnsiUp()
     var render = document.getElementById('render')
     var editor = document.getElementById('editor')
