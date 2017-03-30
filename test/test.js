@@ -124,7 +124,7 @@ describe('HTML rendering', function () {
       expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
     })
 
-    it.skip(`properly renders tabs.txt`, function () {
+    it(`properly renders tabs.txt`, function () {
       const filepath = `${dir}/tabs.txt`
       expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
     })
@@ -138,25 +138,25 @@ describe('HTML rendering', function () {
   describe('#extensions', function () {
     const dir = `${__dirname}/fixtures/extensions/`
 
-    it.skip(`properly renders fenced_code.txt`, function () {
+    it(`properly renders fenced_code.txt`, function () {
       const filepath = `${dir}/fenced_code.txt`
       expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
     })
 
-    it.skip(`properly renders github_flavored.txt`, function () {
+    it(`properly renders github_flavored.txt`, function () {
       const filepath = `${dir}/github_flavored.txt`
       expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
     })
 
-    describe.skip('#extra', function () {
+    describe('#extra', function () {
       const dir = `${__dirname}/fixtures/extensions/extra/`
 
-      it(`properly renders abbr.txt`, function () {
+      it.skip(`properly renders abbr.txt`, function () {
         const filepath = `${dir}/abbr.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
 
-      it(`properly renders extra_config.txt`, function () {
+      it.skip(`properly renders extra_config.txt`, function () {
         const filepath = `${dir}/extra_config.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
@@ -166,27 +166,27 @@ describe('HTML rendering', function () {
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
 
-      it(`properly renders footnote_placeholder.txt`, function () {
+      it.skip(`properly renders footnote_placeholder.txt`, function () {
         const filepath = `${dir}/footnote_placeholder.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
 
-      it(`properly renders footnote.txt`, function () {
+      it.skip(`properly renders footnote.txt`, function () {
         const filepath = `${dir}/footnote.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
 
-      it(`properly renders markdown-syntax.txt`, function () {
+      it.skip(`properly renders markdown-syntax.txt`, function () {
         const filepath = `${dir}/markdown-syntax.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
 
-      it(`properly renders named_markers.txt`, function () {
+      it.skip(`properly renders named_markers.txt`, function () {
         const filepath = `${dir}/named_markers.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
 
-      it(`properly renders tables.txt`, function () {
+      it.skip(`properly renders tables.txt`, function () {
         const filepath = `${dir}/tables.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
@@ -951,7 +951,7 @@ describe('HTML rendering', function () {
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
 
-      it.skip(`properly renders emoticons.txt`, function () {
+      it(`properly renders emoticons.txt`, function () {
         const filepath = `${dir}/emoticons.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
