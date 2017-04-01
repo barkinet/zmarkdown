@@ -161,7 +161,7 @@ describe('HTML rendering', function () {
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
 
-      it.skip(`properly renders footnote_many_footnotes.txt`, function () {
+      it(`properly renders footnote_many_footnotes.txt`, function () {
         const filepath = `${dir}/footnote_many_footnotes.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
@@ -171,7 +171,7 @@ describe('HTML rendering', function () {
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
 
-      it.skip(`properly renders footnote.txt`, function () {
+      it(`properly renders footnote.txt`, function () {
         const filepath = `${dir}/footnote.txt`
         expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
       })
@@ -326,13 +326,8 @@ describe('HTML rendering', function () {
       expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
     })
 
-    it.skip(`properly renders escaped_chars_in_js.txt`, function () {
+    it(`properly renders escaped_chars_in_js.txt`, function () {
       const filepath = `${dir}/escaped_chars_in_js.txt`
-      expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
-    })
-
-    it.skip(`properly renders escaped_links.txt`, function () {
-      const filepath = `${dir}/escaped_links.txt`
       expect(renderFile(filepath)).to.have.html(loadFixture(filepath))
     })
 

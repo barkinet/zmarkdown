@@ -16,6 +16,8 @@ const kbd = require('./packages/kbd')
 const customBlocks = require('./packages/custom-blocks')
 const subSuper = require('./packages/sub-super')
 const emoticons = require('./packages/emoticons')
+const numberedFootnotes = require('./packages/numbered-footnotes')
+const footnotesTitles = require('./packages/footnotes-title')
 
 const fromFile = (filepath) => fs.readFileSync(filepath)
 
@@ -31,7 +33,9 @@ const processor = ({ headingShift } = {}) =>
       blocks: [],
     })
     .use(headingShifter, headingShift || 0)
+    .use(numberedFootnotes)
     .use(remark2rehype, { allowDangerousHTML: true })
+    .use(footnotesTitles, 'Retourner au texte de la note $id')
     .use(customBlocks, {
       secret: 'spoiler',
       s: 'spoiler',
@@ -46,7 +50,7 @@ const processor = ({ headingShift } = {}) =>
     })
     .use(math)
     .use(htmlBlocks)
-    .use(escapeEscaped)
+    .use(escapeEscaped, ['&'])
     .use(kbd)
     .use(subSuper)
     .use(emoticons, {
@@ -62,7 +66,7 @@ const processor = ({ headingShift } = {}) =>
       ':magicien:': '/static/smileys/magicien.png',
       ':colere2:': '/static/smileys/mechant.png',
       ':ninja:': '/static/smileys/ninja.png',
-      '&gt;_&lt;': '/static/smileys/pinch.png',
+      'x(': '/static/smileys/pinch.png',
       ':pirate:': '/static/smileys/pirate.png',
       ":'(": '/static/smileys/pleure.png',
       ':lol:': '/static/smileys/rire.gif',
